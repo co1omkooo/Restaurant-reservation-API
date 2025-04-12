@@ -1,10 +1,3 @@
-"""
-Роутеры API для управления столиками.
-
-Содержит все эндпоинты для операций со столиками:
-создание, просмотр и удаление столиков.
-"""
-
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -29,11 +22,9 @@ router = APIRouter(
 def read_tables(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     """
     Получить список столиков с пагинацией.
-
     Параметры:
         skip: Количество записей для пропуска (для пагинации)
         limit: Максимальное количество возвращаемых записей
-
     Возвращает:
         Список объектов Table
     """
@@ -51,13 +42,10 @@ def read_tables(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 def create_new_table(table: TableCreate, db: Session = Depends(get_db)):
     """
     Создать новый столик.
-
     Параметры:
         table: Данные для создания столика
-
     Возвращает:
         Созданный объект Table
-
     Исключения:
         HTTPException: Если не удалось создать столик
     """
@@ -76,13 +64,10 @@ def create_new_table(table: TableCreate, db: Session = Depends(get_db)):
 def remove_table(table_id: int, db: Session = Depends(get_db)):
     """
     Удалить столик по ID.
-
     Параметры:
         table_id: ID удаляемого столика
-
     Возвращает:
         Сообщение об успешном удалении
-
     Исключения:
         HTTPException: 404 если столик не найден
     """

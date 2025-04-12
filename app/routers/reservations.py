@@ -1,12 +1,3 @@
-"""
-Роутеры API для управления бронированиями.
-
-Содержит все эндпоинты для операций с бронированиями:
-создание, просмотр и удаление броней с проверкой конфликтов.
-"""
-
-# from datetime import datetime
-
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -39,11 +30,9 @@ def read_reservations(
 ):
     """
     Получить список броней с пагинацией.
-
     Параметры:
         skip: Количество записей для пропуска
         limit: Максимальное количество возвращаемых записей
-
     Возвращает:
         Список объектов Reservation
     """
@@ -66,13 +55,10 @@ def create_new_reservation(
 ):
     """
     Создать новую бронь после проверки на конфликты.
-
     Параметры:
         reservation: Данные бронирования
-
     Возвращает:
         Созданный объект Reservation
-
     Исключения:
         HTTPException: 400 если время уже занято или ошибка валидации
     """
@@ -96,13 +82,10 @@ def create_new_reservation(
 def remove_reservation(reservation_id: int, db: Session = Depends(get_db)):
     """
     Удалить бронь по ID.
-
     Параметры:
         reservation_id: ID удаляемой брони
-
     Возвращает:
         Сообщение об успешном удалении
-
     Исключения:
         HTTPException: 404 если бронь не найдена
     """

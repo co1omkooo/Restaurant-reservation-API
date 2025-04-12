@@ -1,12 +1,4 @@
-"""
-Модели базы данных для бронирований.
-
-Определяет SQLAlchemy модель для бронирований,
-которые представляют собой бронь столиков клиентами на определенное время.
-"""
-
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
-# from sqlalchemy.sql import func
 
 from app.database import Base
 

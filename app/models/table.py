@@ -1,10 +1,3 @@
-"""
-Модели базы данных для столиков ресторана.
-
-Определяет SQLAlchemy модель для столиков ресторана,
-которые могут быть забронированы клиентами.
-"""
-
 from sqlalchemy import Column, Integer, String
 
 from app.database import Base

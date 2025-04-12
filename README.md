@@ -20,12 +20,14 @@
 
 ## Установка
 
-1. Клонируйте репозиторий:
+Клонируйте репозиторий:
 ```bash
 git clone https://github.com/yourusername/restaurant-reservation.git
 cd restaurant-reservation
 ```
 ## Запуск
+
+Запустить docker:
 ```bash
 docker-compose up --build
 ```

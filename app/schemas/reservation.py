@@ -1,21 +1,11 @@
-"""
-Схемы Pydantic для валидации данных бронирований.
-
-Определяют структуру данных для API эндпоинтов,
-включая валидацию времени брони и длительности.
-"""
-
 from datetime import datetime
 
 from pydantic import BaseModel, Field, validator
-
-# from typing import Optional
 
 
 class ReservationBase(BaseModel):
     """
     Базовая схема бронирования с общими атрибутами.
-
     Поля:
         customer_name: Имя клиента
         table_id: ID столика
@@ -43,7 +33,6 @@ class ReservationCreate(ReservationBase):
 class Reservation(ReservationBase):
     """
     Полная схема бронирования, включая read-only поля.
-
     Добавляет:
         id: Уникальный идентификатор в базе данных
     """
